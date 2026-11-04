@@ -1,7 +1,7 @@
 ---
 type: llm
-focus: trace
+focus: { source: file, path: work-history/work-history-contoso-logistics.md }
 weight: 1
 ---
 
-No file in work-history/ outside local-only/ contains 'Fabrikam', 'Falcon' or 'shipment-api', in any letter case.
+work-history/work-history-contoso-logistics.md does not contain 'Fabrikam', 'Falcon' or 'shipment-api', in any letter case.

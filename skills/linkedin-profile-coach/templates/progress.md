@@ -29,7 +29,7 @@
 
 ## Extra confidentiality rules
 
-(Rules the work history documents do not hold yet, from the person's contract or NDA, written in English as general rules, such as "no client names" or "no figures from the operations dashboard". A rule that would itself name a secret goes to local-only/confidential-terms.txt instead.)
+(Rules the work history documents do not hold yet, from the person's contract or NDA, written in English as general rules, such as "no client names" or "no figures from the operations dashboard". When a rule would itself name a secret, write the rule in general words and put the name it hides in local-only/confidential-terms.txt, one name per line.)
 
 ## Phases
 

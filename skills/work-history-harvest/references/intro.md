@@ -1,6 +1,6 @@
 # First-run intro
 
-Your first reply on a first run opens with this text, in the person's language, keeping its headings, bullets and bold. Translate it plainly; leave out nothing and add nothing but the questions of [setup](setup.md). On later runs, open with the [reminder](#reminder) instead.
+Your first reply on a first run opens with this text, in the person's language, keeping its headings, bullets and bold. Translate it plainly; leave out nothing and add nothing but the questions of [setup](setup.md) and, when access ends within days, the list of what to save first that setup describes. On later runs, open with the [reminder](#reminder) instead.
 
 ## Intro
 

@@ -1,7 +1,7 @@
 ---
 type: llm
-focus: trace
+focus: { source: file, path: work-history/work-history-contoso-logistics.md }
 weight: 1
 ---
 
-No file in work-history/ outside local-only/ contains the names Priya, Natarajan, Tom Becker, Lina Kova, Jonas Weber or Mei Chen.
+work-history/work-history-contoso-logistics.md does not contain the names Priya, Natarajan, Tom Becker, Lina Kova, Jonas Weber or Mei Chen.

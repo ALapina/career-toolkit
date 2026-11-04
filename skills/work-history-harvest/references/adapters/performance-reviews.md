@@ -69,11 +69,13 @@ From each review cycle, read:
 - feedback from peers and the manager: what they praised, and what they asked for more of;
 - promotions, title changes and scope changes, with dates.
 
-## Turn into records
+## Turn into themes
 
-- Achieved goals with measurable results become `work` records. They count as `verified (performance review)` when the manager's or a peer's part of the review confirms the result, or the review cites a measurement such as a dashboard or report. A goal status or figure the person entered, and everything in a self-assessment, is self-reported, as in the [documents](documents.md) adapter: the basis is then `mixed` or `self-reported` and names that part.
-- Recurring praise becomes `recognition` records: the theme in clean words and who said it by relationship ("praised by the manager and two peers for clear technical writing, three review cycles"), with no names and no quotes. The relationship lets the person pick the right colleague later for a recommendation request.
-- Title changes and promotions go into the document's Titles line, its title sections and the record periods ([document format](../document-format.md)).
+Each item becomes a theme; [harvest](../harvest.md) step 6 turns the themes of all sources into records together.
+
+- Achieved goals with measurable results become themes for `work` records. They count as `verified (performance review)` when the manager's or a peer's part of the review confirms the result, or the review cites a measurement such as a dashboard or report. A goal status or figure the person entered, and everything in a self-assessment, is self-reported, as in the [documents](documents.md) adapter: the basis is then `mixed` or `self-reported` and names that part.
+- Recurring praise becomes themes for `recognition` records: the theme in clean words and who said it by relationship ("praised by the manager and two peers for clear technical writing, three review cycles"), with no names and no quotes. The relationship lets the person pick the right colleague later for a recommendation request.
+- Title changes and promotions, with their dates, go into the themes file next to the themes; [harvest](../harvest.md) step 6 adds them to the Titles line and the title sections ([document format](../document-format.md)).
 - If the person plans to ask colleagues for recommendations, suggest they do it soon, while the colleagues are still easy to reach. The `linkedin-profile-coach` skill drafts LinkedIn requests from this document.
 
 ## Leave out

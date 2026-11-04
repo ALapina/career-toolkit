@@ -1,7 +1,7 @@
 ---
 type: llm
-focus: trace
+focus: { source: file, path: work-history/work-history-contoso-logistics.md }
 weight: 1
 ---
 
-work-history/work-history-contoso-logistics.md now says 'Reviewed by owner: no', and the reply tells the person that new and changed records need their review and asks them to read the whole document.
+The 'About this document' section of work-history/work-history-contoso-logistics.md says 'Reviewed by owner: no'. Before this run it said 'yes, 2025-11-20'.

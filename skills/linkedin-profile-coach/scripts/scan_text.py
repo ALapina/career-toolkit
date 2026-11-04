@@ -17,15 +17,22 @@ and desktop.ini are ignored.
 
 --terms names a file with one confidential term per line (clients, partners,
 internal code names). Blank lines and lines starting with # are ignored, and
-so is a " # comment" after a term. A term matches in any letter case, with
-or without spaces, hyphens, underscores or dots between its words, across a
-line break and with a plural -s or -es: "Fabrikam Retail" also matches
+so is a " # comment" after a term. It matches each name in any letter case,
+with any punctuation or none between its words, and at the start of
+identifiers such as FabrikamClient or falcon2. It also matches a name across
+a line break and with a plural -s or -es: "Fabrikam Retail" also matches
 fabrikam_retail, FabrikamRetail and Fabrikam-Retail's. A short form needs a
 line of its own. Two more kinds of line:
   ?Harbor   a name that is also an ordinary word or a public product: it
             gives review findings instead of block findings
   LOG-      a ticket prefix (ends in -): LOG-1201, log-1201, LOG_1201 and
             LOG 1201 give ticket-key review findings
+A term that holds , ; : = / | ( ) [ ] { } < >, a backslash, a tab, two or
+more spaces in a row, an arrow, a double quotation mark of any style
+(straight, curly, low or angle) or a dash between spaces may never match,
+so the scan warns about its line on stderr. It warns too about a term that
+starts with a list bullet or number (* Fabrikam, 1. Fabrikam); a hyphen
+bullet (- Fabrikam) still matches.
 
 Each finding prints as  path:line: severity: category: excerpt
   block   secrets (credentials in links, password and token assignments,
@@ -33,15 +40,18 @@ Each finding prints as  path:line: severity: category: excerpt
   review  ticket keys, merge-request numbers, links with or without a
           scheme, e-mail addresses, host names, IP addresses, local paths
           (other than the ~/linkedin-profile and ~/work-history folders the
-          skills propose), @handles, terms marked ?, and what a folder
-          scan cannot read; fix unless public and wanted
+          skills propose), @handles, terms marked ?, terms inside an
+          identifier (getFabrikamOrders), and what a folder scan cannot
+          read; fix unless public and wanted
 Secrets are masked in every line of the output. The summary line reads
-  scan_text: B block, R review findings in F of N files[; not scanned: ...][; cannot read: ...]
+  scan_text: B block, R review findings in F of N files[; not scanned: ...][; cannot read: ...][; terms: T names, P ticket prefixes]
 or, with no finding,
-  scan_text: nothing found in N files[; cannot read: ...]
+  scan_text: nothing found in N files[; cannot read: ...][; terms: ...]
+The terms part comes with --terms and counts what the terms file holds.
 
-Exit status: 2 on usage errors or when a file cannot be read (the other
-files are still scanned); otherwise 1 if there is any block finding, else 0.
+Exit status: 2 on usage errors, when the terms file holds no names or ticket
+prefixes, or when a file cannot be read (the other files are still scanned);
+otherwise 1 if there is any block finding, else 0.
 Standard library only; Python 3.8 or newer.
 """
 
@@ -140,6 +150,33 @@ WORKSPACE_PATH = re.compile(
 
 # A term's words: split at separators and where the letter case changes (ShipmentApi, APIGateway).
 TERM_WORDS = re.compile(r"[\s_.\-]+|(?<=[a-z0-9])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])")
+# Where a term ends, after an optional plural: before anything but a letter or digit, or where an
+# identifier goes on with a digit after a letter (falcon2), with a capital after a lowercase letter
+# (FabrikamClient, fabrikamAPI), or with a capital that starts a word, or V and a digit (FALCONGateway,
+# ShipmentAPIV2). Not inside an all-caps word or its plural, even with a version after it: NORDIC is
+# clean for Nord, FALCONRY for Falcon, SAML, SAML2 and SAMLv2 for Sam, ALBs and ALBv2 for Al.
+TERM_END = r"(?:e?s)?(?:(?![^\W_])|(?<=[^\W\d_])(?=\d)|(?-i:(?<=[a-z])(?=[A-Z])|(?=V\d|[A-Z](?!s(?![^\W_])|v\d)[a-z])))"
+# A term of one or two letters or digits, such as Al or Ed, does not end before a digit, even after a
+# plural, as many public codes start with one: AL2023, Ed25519, LIS3DH for Li.
+SHORT_TERM_END = r"(?!(?:e?s)?\d)" + TERM_END
+# Where a term starts a capitalized word inside an identifier: after a lowercase letter or a digit
+# (getFabrikamOrders, PeregrineFalcon), or after a capital (IFabrikamClient). Such a match is a review
+# finding, because the identifier may name something else (GitHub for Hub, TypeScript for Script).
+TERM_INSIDE = r"(?-i:(?<=[a-z0-9])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z]))"
+# A note, a second name or quotation marks written into a terms line: Fabrikam Retail (client),
+# Fabrikam Retail - client, Fabrikam Retail<TAB>client, Northwind [partner], Wingtip -> client (or
+# an arrow character, U+2190 to U+21FF), Project Falcon / Falcon, or a name in double quotation marks
+# of any style; or a list bullet or number and a space at the start (* Wingtip, + Wingtip, 1. Wingtip;
+# the bullet may also be an en or em dash, U+2022, U+2023, U+2043, U+00B7 or a shape from U+25A0 to
+# U+25FF). Such a term matches only text that holds the same note, marks or bullet, so it may never
+# match. Two spaces in a row warn as well: a stray double space inside a name still matches, but a
+# note after a column gap (Fabrikam Retail  client) never does. A hyphen bullet (- Contoso Pharma)
+# gets no warning, as the hyphen is a separator and the name still matches, and neither does a single
+# quotation mark, which names hold as an apostrophe (O'Brien).
+TERM_NOTE = re.compile(
+    r"[,;:()\[\]{}<>=/|\\\t\"\u201c\u201d\u201e\u201f\u00ab\u00bb\u2190-\u21ff]|\s[-\u2013\u2014]+\s|\s{2,}"
+    r"|^(?:[*+\u2013\u2014\u2022\u2023\u2043\u00b7\u25a0-\u25ff]|\d{1,3}\.)\s"
+)
 TERM_COMMENT = re.compile(r"\s+#.*$")
 NEWLINE = re.compile(r"\n")
 
@@ -166,44 +203,59 @@ def mask_secrets(text):
     return text
 
 
-def term_pattern(term):
-    """Match a term in any letter case, with any separators between its words and a plural -s or -es.
+def term_patterns(term):
+    """Return (pattern, inside) for a term, or None for a term without a letter or digit.
 
-    Returns None for a term that is only separators.
+    Both match the term in any letter case, with any punctuation or none between its words and a
+    plural -s or -es, and let it end where TERM_END says, or SHORT_TERM_END for a term of one or two
+    letters or digits. pattern matches where no letter or digit comes before the term, so also at the
+    start of an identifier (FabrikamClient, falcon2); inside matches where the term starts a
+    capitalized word inside an identifier (getFabrikamOrders).
     """
-    words = [word for word in TERM_WORDS.split(term) if word]
-    if not words:
+    if not re.search(r"[^\W_]", term):
         return None
-    body = r"[\s_.\-]*".join(re.escape(word) for word in words)
-    return re.compile(r"(?<![^\W_])" + body + r"(?:e?s)?(?![^\W_])", re.IGNORECASE)
+    words = [word for word in TERM_WORDS.split(term) if word]
+    body = r"[\W_]*".join(re.escape(word) for word in words)
+    # The lookahead for the first character changes no match, but most positions then fail before the
+    # slower lookbehinds: the scan runs about three times faster.
+    first = "(?=" + re.escape(words[0][0]) + ")"
+    end = TERM_END if len(re.findall(r"[^\W_]", term)) > 2 else SHORT_TERM_END
+    return (
+        re.compile(first + r"(?<![^\W_])" + body + end, re.IGNORECASE),
+        re.compile(first + TERM_INSIDE + body + end, re.IGNORECASE),
+    )
 
 
 def load_terms(path):
-    """Return (terms, ticket prefixes) from a terms file.
+    """Return (terms, ticket prefixes, noted lines) from a terms file.
 
-    terms holds (term, severity, pattern); a line starting with ? gives review findings.
+    terms holds (term, severity, patterns); a line starting with ? gives review findings.
     ticket prefixes holds patterns; a line ending in - names one, such as LOG-.
+    noted lines holds the numbers of the lines whose term holds a note (TERM_NOTE).
     """
     terms = []
     tickets = []
+    noted = []
     # utf-8-sig drops the byte-order mark some editors write at the start.
     with open(path, encoding="utf-8-sig") as handle:
-        for raw in handle:
+        for number, raw in enumerate(handle, start=1):
             term = TERM_COMMENT.sub("", raw).strip()
             if not term or term.startswith("#"):
                 continue
             severity = "block"
             if term.startswith("?"):
                 severity, term = "review", term[1:].strip()
+            if TERM_NOTE.search(term):
+                noted.append(number)
             if term.endswith("-"):
                 prefix = term.rstrip("-").strip()
                 if prefix:
                     tickets.append(re.compile(r"(?<![^\W_])" + re.escape(prefix) + r"[-_ ]?\d+", re.IGNORECASE))
                 continue
-            pattern = term_pattern(term)
-            if pattern:
-                terms.append((term, severity, pattern))
-    return terms, tickets
+            patterns = term_patterns(term)
+            if patterns:
+                terms.append((term, severity, patterns))
+    return terms, tickets, noted
 
 
 def iter_files(paths, unscanned):
@@ -240,17 +292,22 @@ def iter_files(paths, unscanned):
 
 
 def find_terms(content, terms):
-    """Return {line number: [(severity, term)]} for a file's text; a term may wrap onto the next line."""
+    """Return {line number: [(severity, term)]} for a file's text; a term may wrap onto the next line.
+
+    A term inside an identifier gives a review finding. A line reports each term once, as a block
+    finding when any of its matches there is one.
+    """
     found = {}
     starts = None
-    for term, severity, pattern in terms:
-        for match in pattern.finditer(content):
-            if starts is None:
-                starts = [0] + [newline.end() for newline in NEWLINE.finditer(content)]
-            hits = found.setdefault(bisect.bisect_right(starts, match.start()), [])
-            if (severity, term) not in hits:
-                hits.append((severity, term))
-    return found
+    for term, severity, (pattern, inside) in terms:
+        for kind, regex in ((severity, pattern), ("review", inside)):
+            for match in regex.finditer(content):
+                if starts is None:
+                    starts = [0] + [newline.end() for newline in NEWLINE.finditer(content)]
+                hits = found.setdefault(bisect.bisect_right(starts, match.start()), {})
+                if hits.get(term) != "block":
+                    hits[term] = kind
+    return {number: [(kind, term) for term, kind in hits.items()] for number, hits in found.items()}
 
 
 def scan_line(line, line_terms, tickets):
@@ -280,8 +337,8 @@ def scan_line(line, line_terms, tickets):
                 yield "review", "ticket-key", match.group(0)[:80]
 
 
-def plural(number, word):
-    return "%d %s%s" % (number, word, "" if number == 1 else "s")
+def plural(number, word, words=None):
+    return "%d %s" % (number, word if number == 1 else words or word + "s")
 
 
 def main(argv=None):
@@ -290,9 +347,20 @@ def main(argv=None):
     parser.add_argument("paths", nargs="+", metavar="PATH", help="files or folders to scan")
     args = parser.parse_args(argv)
 
+    terms, tickets = [], []
     unscanned = []
     try:
-        terms, tickets = load_terms(args.terms) if args.terms else ([], [])
+        if args.terms:
+            terms, tickets, noted = load_terms(args.terms)
+            for number in noted:
+                print(
+                    'scan_text: %s line %d may never match: one name per line, a note only after " # "' % (args.terms, number),
+                    file=sys.stderr,
+                )
+            # An empty terms file would make the scan look clean with no name checked.
+            if not terms and not tickets:
+                print("scan_text: %s holds no names or ticket prefixes" % args.terms, file=sys.stderr)
+                return 2
         files = list(iter_files(args.paths, unscanned))
     except (OSError, UnicodeDecodeError) as error:
         print("scan_text: cannot read %s" % error, file=sys.stderr)
@@ -335,6 +403,8 @@ def main(argv=None):
         summary += "; not scanned: %s" % ", ".join(parts)
     if unreadable:
         summary += "; cannot read: %s" % plural(unreadable, "file")
+    if args.terms:
+        summary += "; terms: %s, %s" % (plural(len(terms), "name"), plural(len(tickets), "ticket prefix", "ticket prefixes"))
     print(summary)
     if unreadable:
         return 2

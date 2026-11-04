@@ -4,4 +4,4 @@ focus: { source: file, path: work-history/work-history-contoso-logistics.md }
 weight: 1
 ---
 
-'Next update' holds a date in 2027-11, one year after this run.
+'Next update' is one year after the date of the Harvest log row this run added (the row after the 2025-11-03 row): the same month and day, one year later.

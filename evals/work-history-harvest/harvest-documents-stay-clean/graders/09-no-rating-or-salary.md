@@ -1,7 +1,7 @@
 ---
 type: llm
-focus: trace
+focus: { source: file, path: work-history/work-history-contoso-logistics.md }
 weight: 1
 ---
 
-No file in work-history/ outside local-only/ contains the rating '4/5', the salary band 'C3' or the 4% merit increase.
+work-history/work-history-contoso-logistics.md does not contain the rating '4/5', the salary band 'C3' or the 4% merit increase.

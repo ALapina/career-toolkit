@@ -17,16 +17,16 @@ Add a newer period to an existing document, usually once a year, when its Next u
 
 3. **Collect** with [harvest](harvest.md) steps 1 and 3 to 5: the disclosures and the person's yes, what expires first, the sources and the adapters, each adapter over its window from step 2. Items from before a window that a source returns anyway stay out.
 
-   Done when every chosen adapter has met its completion criterion or stopped with a clean reason.
+   Done when every chosen adapter has met its completion criterion and its themes are saved, or stopped with a clean reason.
 
-4. **Match each theme to the records.** Records hold no ticket numbers or links, so match by what the work was and when:
-   - **Same work:** the theme describes the same body of work as a record (the same goal, the same part of the product, the same kind of action and technologies), and its period continues or overlaps the record's Period. Update that record: extend its Period, add what is new to Action and Result in full sentences, add the source types to its Basis with today's check date, and set its status to `pending`. One body of work stays one record, however long it ran.
+4. **Match each theme to the records,** taking the themes from this run's themes files ([harvest](harvest.md) step 5) when they are not in this conversation. Records hold no ticket numbers or links, so match by what the work was and when:
+   - **Same work:** the theme describes the same body of work as a record (the same goal, the same part of the product, the same kind of action and technologies), and its period continues or overlaps the record's Period. Update that record: when it is approved, first copy its approved text as [Owner review](../SKILL.md#owner-review) says; then extend its Period, add what is new to Action and Result in full sentences, add the source types to its Basis with today's check date, and set its status to `pending`. One body of work stays one record, however long it ran.
    - **New work:** no record describes it. Add a record with the next free ID and status `pending`.
    - **Unclear:** it could be either. Show the person the record's title and period next to the theme in one line each, and ask: same work or new? Without an answer, add it as a new `pending` record and put the pair under "Open questions": "E-014 may continue E-004: merge them?".
 
-   Write new and updated records by the rules of [harvest](harvest.md) step 6 for My role, conflicting claims and thin themes.
+   Write new and updated records by the rules of [harvest](harvest.md) step 6 for title changes, My role, conflicting claims and thin themes.
 
-   Done when every theme is an updated record, a new record, a new record with its question, or a question under "Open questions".
+   Done when every theme is an updated record, a new record, a new record with its question, or a question under "Open questions", and every title change the themes files hold is in the Titles line.
 
 5. **Clean and approve** with [harvest](harvest.md) steps 7 to 10: the NDA pass, the review of new and updated records, the gaps, the closing scan.
 

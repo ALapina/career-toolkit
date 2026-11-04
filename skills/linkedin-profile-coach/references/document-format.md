@@ -73,7 +73,7 @@ A skipped source keeps its row with the reason in clean words and empty dates, s
 
 ### Harvest log
 
-One row per run, oldest first. Run is `first harvest`, `update` or `interview`.
+One row per run, oldest first. Run is `first harvest`, `harvest` (a later harvest), `update` or `interview`.
 
 ```markdown
 | Date | Run | Sources | Period | Records added | Records updated |

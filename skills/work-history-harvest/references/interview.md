@@ -20,7 +20,7 @@ Fill the gaps in the document by asking the person, and record the answers as cl
 
    Done when the person has answered, skipped or deferred each question of the round.
 
-3. **Write each answer** into the record it belongs to, or a new record, with Basis `self-reported` or `mixed` and status `pending`. Clean the answer before writing it: when it names a client, a colleague or an internal system, or gives an employer's business figure, generalize it and tell the person what you changed. Write the record in the document's style, in full sentences, even when the answer came in a few words. A title answer goes into the Titles line and gets its own title section ([document format](document-format.md)). Work that belongs to no employer, such as a course during a career break, goes into `work-history-independent.md`, created from the template like any other document.
+3. **Write each answer** into the record it belongs to, or a new record, with Basis `self-reported` or `mixed` and status `pending`. Before an answer changes an approved record, copy its approved text as [Owner review](../SKILL.md#owner-review) says. Clean the answer before writing it: when it names a client, a colleague or an internal system, or gives an employer's business figure, generalize it and tell the person what you changed. Write the record in the document's style, in full sentences, even when the answer came in a few words. A title answer goes into the Titles line and gets its own title section ([document format](document-format.md)). Work that belongs to no employer, such as a course during a career break, goes into `work-history-independent.md`, created from the template like any other document.
 
    Done when every answer of the round that adds or changes evidence sits in a clean record.
 
@@ -28,7 +28,7 @@ Fill the gaps in the document by asking the person, and record the answers as cl
 
    Done when the list holds only the questions still open.
 
-5. **Repeat** until no open questions remain or the person stops. Then run the NDA pass from the [confidentiality procedure](confidentiality.md) over the changed records, review them with the person as in [harvest](harvest.md) step 8, scan again after their edits, and finish as [End of every run](../SKILL.md#end-of-every-run) says, with a Harvest log row of run `interview`.
+5. **Repeat** until no open questions remain or the person stops. Then run the NDA pass from the [confidentiality procedure](confidentiality.md) over the changed records, review them with the person as in [harvest](harvest.md) step 8, scan again after their edits and restores, and finish as [End of every run](../SKILL.md#end-of-every-run) says, with a Harvest log row of run `interview`.
 
    Done when the NDA pass is clean, the person has approved, edited or dropped every changed record, and the About section is current.
 
