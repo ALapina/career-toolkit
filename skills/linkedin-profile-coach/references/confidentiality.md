@@ -37,13 +37,13 @@ The pass covers:
    - `review` findings (ticket keys, merge-request numbers, links with or without a scheme, email addresses, host names, IP addresses, local paths, @handles): generalize them, except public links and handles the person wants to keep, such as their open-source repository.
    - names marked `?` in the terms file, which are also ordinary words or public products: show the sentence; keep it when it uses the word in its ordinary or public sense, otherwise generalize.
 
-3. **Read everything the pass covers** against the front-page test, the "Clean text leaves out" list in `SKILL.md` and the extra rules in `progress.md`. An item on those lists, such as a client's name or an employer's business figure, is not borderline: generalize or remove it yourself, and tell the person what changed without repeating the detail. Then collect each sentence that could still let a reader recognize a client, a colleague or an internal system.
+3. **Read everything the pass covers** against the front-page test, the "Clean text leaves out" list in `SKILL.md`, the extra confidentiality rules in each work history document's About section, and the extra rules in `progress.md`. An item on those lists, such as a client's name or an employer's business figure, is not borderline: generalize or remove it yourself, and tell the person what changed without repeating the detail. Then collect each sentence that could still let a reader recognize a client, a colleague or an internal system.
 
 4. **Show the borderline list.** For each sentence: why it may identify someone, and a generalized version. The person picks keep, generalize or remove. Keep it only when they confirm that no reader could tell which client, colleague or system it is about. Without an answer, generalize.
 
-5. **Record the outcome** in each evidence record's Confidentiality field: the kind of detail removed, never the detail.
+5. **Name the records to correct.** When a detail you changed came from a record's own text, tell the person which record holds it, by document and ID (such as E-004 in `work-history-contoso-logistics.md`), and the kind of detail, never the detail. The person corrects the record with `work-history-harvest`; this skill leaves the documents as they are ([Workspace](../SKILL.md#workspace)).
 
-Done when the pass is clean: the scanner reports no `block` findings, every `review` finding is fixed or approved by the person, every borderline sentence is kept, generalized or removed, and the person has a proposal for every image and received recommendation that fails the front-page test.
+Done when the pass is clean: the scanner reports no `block` findings, every `review` finding is fixed or approved by the person, every borderline sentence is kept, generalized or removed, the person has a proposal for every image and received recommendation that fails the front-page test, and every record that held a changed detail is named to the person.
 
 ## linkedin-export/
 
