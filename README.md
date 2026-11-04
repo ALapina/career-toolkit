@@ -1,12 +1,16 @@
 # career-toolkit
 
-Claude skills for a job search after a layoff. First you save the history of your work while you still have access. Then you use it for your LinkedIn profile and, later, your CV.
+A set of Claude skills for job hunting. It collects your work history into a document you keep, then uses it to tailor your LinkedIn profile and CV.
+
+The goal is to make a job search less stressful and better organized. Nobody remembers every year of their work. A work history document gives you a reliable record of what you did, checked by you, and it stays with you. Every time you tailor your CV to a job description, you start from real facts in that document.
+
+Run `work-history-harvest` once a year, even when you are not looking for a job. It is a good moment to reflect on what you achieved, while your memory is still fresh enough to fill in the details.
 
 ## The skills
 
 | Skill | What it does | Status |
 |---|---|---|
-| **work-history-harvest** | Collects your work at one employer into one document you keep, `work-history-<employer>.md`. | ready |
+| **work-history-harvest** | Collects your work at one employer into one document you keep, `work-history-<employer>.md`. It is built to respect your NDA: the document holds only general descriptions of your own work, and you review every word of it. | ready |
 | **linkedin-profile-coach** | Checks your LinkedIn profile and drafts new texts from that document. You paste them in yourself. | ready |
 | **cv-tailor** | Will write a CV for a specific job from the same document. | planned |
 
