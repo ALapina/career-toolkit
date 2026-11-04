@@ -1,0 +1,13 @@
+schema_version: "1.1"
+name: no-access-start-in-russian
+expected_outcome: |
+  The first reply is in Russian and opens with the first-run intro: what the skill does, what it can
+  use, what it never saves, what to do with an NDA, the person's own responsibility for the
+  document, where to run it, and that it works best on the strongest model. It asks the opening
+  setup questions, proposes a folder and asks before creating it. It does not read the old CV or
+  the review before the person has heard the disclosures and said yes, and it asks for no access to
+  Jira, GitLab, GitHub or Confluence, pointing to the documents and the interview instead. It
+  creates no files, and it does not send the person to the former employer for permission. After
+  the intro, the reply is short: what to answer first, at most five questions.
+context:
+  scaffold_script: place-files.sh

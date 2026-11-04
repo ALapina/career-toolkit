@@ -1,0 +1,15 @@
+schema_version: "1.1"
+name: harvest-update-new-period
+expected_outcome: |
+  A yearly update of work-history/work-history-contoso-logistics.md, harvested in 2025-11 for
+  2021-03 to 2025-10. The run harvests only the new period from 2025-11 on. The contract-testing
+  work that continued into 2026 updates E-002 instead of adding a second record, the old-period
+  tickets add nothing, and the visual regression and load testing work become new pending records
+  from E-006 on. The Sources covered table and the Harvest log show the update, Next update moves
+  one year ahead, and Reviewed by owner turns to no. The chat is in Russian and the document stays
+  in English. No confidential term, colleague name, ticket key, link, rating, salary or operations
+  dashboard figure reaches the document, nor the load at which the checkout would have failed. The
+  routine regression-cycle ticket gets no record of its own. The reply is short: decisions first,
+  counts and record IDs, at most five questions.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,19 @@
+Leapsome - Performance review 2026 - Alex Rivera
+Cycle: annual 2026 | Manager: Priya Natarajan | Rating: 4/5 (exceeds expectations)
+
+GOALS
+1. Extend contract testing to every consumer of shipment-api.
+   Status: achieved. Contract tests now cover 3 consumer integrations with 97 tests, and caught 11 breaking changes before release in 2026.
+2. Introduce visual regression testing for the checkout UI.
+   Status: achieved. UI regressions that reached UAT fell from 7 in the second half of 2025 to 1 in the first half of 2026.
+3. Prepare checkout for the peak season with load tests.
+   Status: achieved. The load tests found a connection pool limit that would have failed at about three times normal load; it was fixed before the peak.
+
+STRENGTHS (manager)
+- Turned contract testing from a pilot into a release gate that the developers trust.
+
+PEER FEEDBACK
+- Omar Haddad (developer): "Alex's load tests found the pool problem weeks before it would have hit us."
+
+COMPENSATION (confidential)
+- Salary band C4, merit increase 5%.

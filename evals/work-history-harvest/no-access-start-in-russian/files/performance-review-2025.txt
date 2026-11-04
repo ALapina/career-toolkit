@@ -1,0 +1,24 @@
+Leapsome - Performance review 2025 - Alex Rivera
+Cycle: annual 2025 | Manager: Priya Natarajan | Rating: 4/5 (exceeds expectations)
+
+GOALS
+1. Bring flaky end-to-end failures in the Project Falcon checkout suite down from 15% of nightly runs to under 3%.
+   Status: achieved. Failure rate was 1.8% in September 2025 (CI dashboard).
+2. Introduce contract tests between shipment-api and the Fabrikam Retail integration.
+   Status: achieved. 42 contract tests in place; they caught 6 breaking changes before release.
+3. Mentor junior QA engineers.
+   Status: achieved. Onboarded Tom Becker and Lina Kova; both run regression cycles on their own now.
+
+STRENGTHS (manager)
+- Bug reports are clear enough that developers rarely need to ask follow-up questions.
+- Took the initiative to build the flakiness dashboard without being asked.
+
+PEER FEEDBACK
+- Jonas Weber (developer): "Alex's flakiness dashboard changed how we decide whether to release."
+- Mei Chen (product manager): "Alex finds the edge cases nobody else thinks about, early in refinement."
+
+AREAS TO GROW
+- Share knowledge more widely, for example in a tech talk.
+
+COMPENSATION (confidential)
+- Salary band C3, merit increase 4%.

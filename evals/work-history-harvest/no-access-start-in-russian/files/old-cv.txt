@@ -1,0 +1,16 @@
+ALEX RIVERA - QA Engineer
+alex.rivera@example.com
+
+EXPERIENCE
+Contoso Logistics - QA Engineer, 2021-03 to present
+- Led a QA team of 10 engineers across three product lines.
+- Reduced production bugs by 80% through test automation.
+- Built the Selenium regression suite for the Falcon checkout (Fabrikam Retail account).
+- Expert in Kubernetes and cloud infrastructure.
+
+Northwind Traders - Junior QA Engineer, 2018-06 to 2021-02
+- Manual and exploratory testing of the warehouse management web app.
+- Wrote the first automated smoke tests with Cypress.
+
+SKILLS
+Selenium, Cypress, Playwright, Java, TypeScript, Postman, Jenkins, Kubernetes

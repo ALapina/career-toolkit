@@ -1,0 +1,16 @@
+schema_version: "1.1"
+name: audit-write-respect-evidence
+expected_outcome: |
+  audit.md gives every checklist item a status with rule IDs, and sorts the target keywords into
+  keep / add / no evidence yet, with Kubernetes and performance testing under no evidence yet.
+  It flags that the Contoso Logistics position still shows as current although the job ended, and
+  that its title is a level below the evidence. It marks as can't tell what only a screenshot
+  shows, such as the company Page link, the linked skills and the photo. The drafts hold tagged paste-ready
+  blocks: two or three headline variants within 220 characters, none presenting the ended role as
+  current; a first-person About within 2,600 characters; and an experience entry for Contoso
+  Logistics whose length the run reports for the edit form's counter, since LinkedIn documents no
+  limit. Every claim cites an existing record ID from the work history documents, the verb matches the record's role (the
+  Playwright migration was contributed to, not led), no unsupported keyword is added, and the
+  house-style phrase list is respected. The reply tells the person to paste the texts by hand and why.
+context:
+  scaffold_script: place-files.sh

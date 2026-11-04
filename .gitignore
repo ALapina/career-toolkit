@@ -1,0 +1,23 @@
+# A personal folder must never be committed here.
+linkedin-profile/
+work-history/
+local-only/
+*-workspace/
+
+# Local clutter
+.DS_Store
+.idea/
+__pycache__/
+*.pyc
+*.zip
+
+# The eval fixtures hold fictional folders on purpose.
+!evals/*/*/files/linkedin-profile/
+!evals/*/*/files/work-history/
+!evals/*/*/files/work-history/local-only/
+
+# Results of claude plugin eval runs
+results/
+
+# Working notes, never published
+notes/

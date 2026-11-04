@@ -1,0 +1,12 @@
+Issue key,Summary,Issue Type,Status,Resolution,Created,Resolved,Epic,Labels,Description
+LOG-1344,Contract test caught breaking change in tracking payload,Bug,Done,Fixed,2025-07-28,2025-08-05,Contract testing,contract-tests,"Found before release 4.12"
+LOG-1388,Isolate login state in flaky Falcon checkout test,Bug,Done,Fixed,2025-09-02,2025-09-12,Test stability 2025,flaky-tests,"Part of the flakiness work; shared login state between workers"
+LOG-1452,Contract tests for shipment-api returns endpoints,Story,Done,Done,2025-11-10,2025-11-28,Contract testing,contract-tests,"Pact for the returns consumer, same setup as the order and tracking contracts"
+LOG-1478,Pact contract tests for the billing consumer of shipment-api,Story,Done,Done,2026-01-08,2026-01-30,Contract testing,contract-tests,"Third consumer integration under contract tests"
+LOG-1490,Block merge requests that break a published contract,Story,Done,Done,2026-02-02,2026-02-19,Contract testing,contract-tests;ci,"can-i-deploy check in GitLab CI; see https://gitlab.contoso-logistics.example/qa/contracts"
+LOG-1501,Visual regression tests for the checkout UI with Playwright screenshots,Story,Done,Done,2026-02-16,2026-03-06,Visual regression,visual-regression,"Screenshot comparison for 24 checkout screens"
+LOG-1517,Baseline management for visual snapshots,Story,Done,Done,2026-03-09,2026-03-27,Visual regression,visual-regression,"Review and approve new baselines in merge requests"
+LOG-1533,Run visual regression in CI on every merge request,Story,Done,Done,2026-04-01,2026-04-17,Visual regression,visual-regression;ci,"Goal: fewer UI regressions reaching UAT"
+LOG-1560,Load test checkout with k6 before peak season,Story,Done,Done,2026-05-04,2026-06-05,Peak readiness 2026,performance,"Peak target from the ops dashboard: 1.2 million orders per day"
+LOG-1574,Load test found connection pool exhaustion at three times normal load,Bug,Done,Fixed,2026-06-08,2026-07-01,Peak readiness 2026,performance,"Found by Alex's k6 run, fixed by Omar Haddad before peak"
+LOG-1602,Regression cycle for release 5.3,Task,Done,Done,2026-09-08,2026-09-15,,regression,"Ran with Tom Becker"

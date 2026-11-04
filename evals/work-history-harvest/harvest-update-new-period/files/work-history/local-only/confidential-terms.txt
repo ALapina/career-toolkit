@@ -1,0 +1,16 @@
+# Client
+Fabrikam Retail
+Fabrikam
+# Code names and internal systems
+Project Falcon
+Falcon
+shipment-api
+# Ticket key prefix
+LOG-
+# Colleagues
+Priya Natarajan
+Tom Becker
+Lina Kova
+Jonas Weber
+Mei Chen
+Omar Haddad

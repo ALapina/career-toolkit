@@ -1,0 +1,13 @@
+{
+  "name": "career-toolkit",
+  "owner": {
+    "name": "Anna Lapina"
+  },
+  "description": "Holds the career-toolkit plugin: Claude skills for a job search after a layoff.",
+  "plugins": [
+    {
+      "name": "career-toolkit",
+      "source": "./"
+    }
+  ]
+}
