@@ -1,10 +1,10 @@
 {
   "name": "career-toolkit",
   "version": "0.2.0",
-  "description": "Skills for a job search after a layoff: collect the history of your work into a clean document you keep, then rebuild your LinkedIn profile from it.",
+  "description": "Skills that help you keep a complete, organized history of your work: collect it into one clean document per employer that you keep, then rebuild your LinkedIn profile from it.",
   "author": {
     "name": "Anna Lapina"
   },
   "license": "MIT",
-  "keywords": ["career", "job-search", "layoff", "work-history", "linkedin"]
+  "keywords": ["work-history", "career", "linkedin", "job-search"]
 }

@@ -3,7 +3,7 @@
   "owner": {
     "name": "Anna Lapina"
   },
-  "description": "Holds the career-toolkit plugin: Claude skills for a job search after a layoff.",
+  "description": "Holds the career-toolkit plugin: Claude skills that keep a complete, organized history of your work and build your LinkedIn profile from it.",
   "plugins": [
     {
       "name": "career-toolkit",

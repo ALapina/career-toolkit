@@ -37,7 +37,7 @@ Fill the gaps in the document by asking the person, and record the answers as cl
 Ask these once each, in either path:
 
 - **Titles.** Every title the person held at the employer, as it was officially given, with the month and year each began, promotions and role changes included. When a title is internal or unusual, also ask what the role did and at what level.
-- **After the job,** once it has ended: what the person is doing in the meantime, such as courses, certificates, projects, freelance or interim work, volunteering. Record each in `work-history-independent.md`, or freelance work in a document for the person's own business, with the skills it shows. Ask whether the person wants the end of the job recorded in the About section, and record only the plain fact, such as "role ended in a layoff". How broad a layoff was stays out unless the employer has made it public.
+- **After the job,** once it has ended: what the person is doing in the meantime, such as courses, certificates, projects, freelance or interim work, volunteering. Record each in `work-history-independent.md`, or freelance work in a document for the person's own business, with the skills it shows. Ask whether the person wants the end of the job recorded in the About section, and record only the plain fact, such as "left to take a career break". Details of how the job ended that concern other people or the employer stay out unless the employer has made them public.
 - **AI tools.** Which AI tools or apps the person used regularly, and for what. Add their public names to the Technologies of the records where the person used them.
 
 ## Guided path

@@ -1,8 +1,8 @@
 # career-toolkit
 
-A set of Claude skills for job hunting. It collects your work history into a document you keep, then uses it to tailor your LinkedIn profile and CV.
+A set of Claude skills that help you keep a complete, organized history of your work and then use it for your LinkedIn profile and your CV.
 
-The goal is to make a job search less stressful and better organized. Nobody remembers every year of their work. A work history document gives you a reliable record of what you did, checked by you, and it stays with you. Every time you tailor your CV to a job description, you start from real facts in that document.
+Collecting your own work history is hard. Your work is spread across tickets, pages, merge requests, reviews and chats, and nobody remembers every year of it. `work-history-harvest` gathers it from those places, asks you about the rest, and organizes it into one document per employer that you check and keep. Every time you update your LinkedIn profile or tailor your CV to a job description, you start from real facts in that document.
 
 Run `work-history-harvest` once a year, even when you are not looking for a job. It is a good moment to reflect on what you achieved, while your memory is still fresh enough to fill in the details.
 
@@ -81,7 +81,7 @@ If you also use Claude Code 2.1.273 or later with the same Claude account, it lo
 ## Your data and your NDA
 
 - **Your contract decides what you may keep.** The skills keep only general descriptions of your own work. You still know your obligations better than any tool. This is not legal advice.
-- **You can give the skill your NDA.** It can also take the confidentiality section of your contract or your termination agreement. Give only the clauses it needs, without salary or personal data. Before you upload them, check your company's AI policy if you use a work account. On a personal account, check whether your chats are used to train models. The clauses stay in `local-only/`. The skill turns them into general rules at the top of your document and asks you to confirm each one.
+- **You can give the skill your NDA.** It can also take the confidentiality section of your contract or your exit agreement. Give only the clauses it needs, without salary or personal data. Before you upload them, check your company's AI policy if you use a work account. On a personal account, check whether your chats are used to train models. The clauses stay in `local-only/`. The skill turns them into general rules at the top of your document and asks you to confirm each one.
 - **Read the whole document yourself.** The skill makes mistakes. The line "Reviewed by owner" stays `no` until you tell the skill you have read all of it. Check it against your contract before you copy it off a work computer.
 - **`local-only/` stays behind.** This folder holds your list of names that must never appear, your NDA clauses and the employer documents you gathered. Before you copy anything to personal storage, ask the skill for its final check, then copy only the files it lists: your work history documents, `progress.md` and your own certificates.
 - **Raw data stays where it was read.** Claude Code keeps session transcripts as plain text under `~/.claude/projects/` on the computer you use. In claude.ai, files you upload stay in the chat until you delete it.

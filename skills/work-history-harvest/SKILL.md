@@ -1,6 +1,6 @@
 ---
 name: work-history-harvest
-description: Collects a person's work at one employer into a clean document they keep, from work systems, documents, Claude history and an interview. Use before work access ends, after a layoff, or for a yearly update.
+description: Collects a person's work at one employer into a clean document they keep, from work systems, documents, Claude history and an interview. Use before work access ends, after leaving a job, or for a yearly update.
 license: MIT
 ---
 
@@ -124,7 +124,7 @@ Clean text may contain:
 - public technologies, languages, tools and methods (React, Kubernetes, Scrum);
 - the person's own actions and decisions, and their results, as relative figures where possible ("cut build time by 40%", "moved 20+ screens to the new stack");
 - team size and project duration;
-- the plain fact that the person's role ended in a layoff or restructuring.
+- the plain fact of how the person's own role ended, in their words.
 
 Clean text leaves out:
 
@@ -133,7 +133,7 @@ Clean text leaves out:
 - ticket and merge-request numbers, internal links and host names;
 - the employer's business figures: revenue, transaction volumes, client counts, prices;
 - security and reliability weaknesses beyond a category ("fixed vulnerable dependencies", "found a capacity limit before the peak season"), such as which vulnerability it was or the load at which a system fails;
-- unannounced products and plans, internal reorganizations and other people's layoffs;
+- unannounced products and plans, internal reorganizations and changes to other people's jobs;
 - ratings on the employer's internal scale, salary and other pay.
 
-The person's contract, NDA or termination agreement can add rules ([setup](references/setup.md) step 4); where such a rule is stricter than these lists, it wins. Items on the leave-out list are never borderline: generalize or remove them yourself. Show every other borderline sentence to the person with three choices: keep, generalize, remove. Without an answer, generalize. The [confidentiality procedure](references/confidentiality.md) holds the rules for collecting, the NDA pass, the scanner and `local-only/`.
+The person's contract, NDA or exit agreement can add rules ([setup](references/setup.md) step 4); where such a rule is stricter than these lists, it wins. Items on the leave-out list are never borderline: generalize or remove them yourself. Show every other borderline sentence to the person with three choices: keep, generalize, remove. Without an answer, generalize. The [confidentiality procedure](references/confidentiality.md) holds the rules for collecting, the NDA pass, the scanner and `local-only/`.

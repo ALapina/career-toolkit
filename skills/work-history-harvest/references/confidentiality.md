@@ -1,13 +1,13 @@
 # Confidentiality procedure
 
-`SKILL.md` defines clean text and the front-page test. This file says how to keep the document clean: while collecting, in the NDA pass, with the person's own NDA clauses, and before the copy to personal storage. After a layoff, the person's contract decides what stays confidential, through the extra rules in the document's About section.
+`SKILL.md` defines clean text and the front-page test. This file says how to keep the document clean: while collecting, in the NDA pass, with the person's own NDA clauses, and before the copy to personal storage. After the job ends, the person's contract still decides what stays confidential, through the extra rules in the document's About section.
 
 ## While collecting
 
 These hold in every step that reads a source, a screenshot or an answer.
 
 - **Clean before you write.** Read the raw item, decide what it shows about the person's work, and write only the clean sentence. Raw text never goes into the document, not even temporarily. When a large source needs a file to process, such as an API response you fetch, save it in `local-only/` and keep it, with the themes files of [harvest](harvest.md) step 5, until harvest step 8 deletes them once the records built from them are reviewed, or sooner when the person asks.
-- **Generalize until nobody can tell.** "A large Scandinavian furniture retailer" still names the client when the employer has one such client. Go up a level ("a retail client", "a client") until the description fits many companies. Generalize the scale of a layoff too. "A company-wide layoff" tells about other people's jobs, so it is clean only when the employer announced the cut publicly. Otherwise write the person's own fact, such as "my role ended in a layoff".
+- **Generalize until nobody can tell.** "A large Scandinavian furniture retailer" still names the client when the employer has one such client. Go up a level ("a retail client", "a client") until the description fits many companies. Generalize how a job ended too. Details such as how many people a change affected, or why the employer made it, tell about other people and the employer, so they are clean only when the employer has made them public. Otherwise write only the person's own fact, such as "my role ended in October 2026".
 - **Unannounced means the thing, not its name.** For a product, market, deal or plan the employer has not announced, a description gives away as much as the code name. For every product or initiative a record describes, ask the person whether the employer has announced it. Until they say yes, write only the person's work and a neutral kind ("a new product", "a greenfield service"), without its type, market, partner or launch date.
 - **Keep the person's figures, drop the employer's.** "Cut release time from two days to four hours" is the person's result. "Shipped 3 million parcels a day" is the employer's business figure. Gains in speed or stability, such as "cut p95 latency by 40%", are the person's results too. A weakness they found, such as the load at which a system would fail, belongs to the employer even when their own test measured it.
 - **Public stays public.** Open-source work, public talks and published articles can be named and linked; they are already public.
@@ -15,10 +15,10 @@ These hold in every step that reads a source, a screenshot or an answer.
 
 ## NDA clauses
 
-The person may give clauses from an NDA, the confidentiality section of a contract, or a termination agreement. Termination agreements often add terms of their own, such as keeping the agreement secret or not speaking badly of the company.
+The person may give clauses from an NDA, the confidentiality section of a contract, or an exit agreement. Exit agreements often add terms of their own, such as keeping the agreement secret or not speaking badly of the company.
 
 1. **Keep the text in `local-only/`.** In full mode, save what the person pasted or uploaded as `local-only/nda-clauses-<employer>.txt`, with the employer part of the document's name, or keep their file there. In light mode, it stays an upload, and the person keeps it in their own `local-only/` folder. No word of it goes into the document.
-2. **Turn each clause into a rule** in general words that name nothing secret: "no figures about client accounts", "the termination agreement and its terms stay confidential", "no statements about the company's management". A clause that only names salary, notice period or other terms that touch no work description adds no rule.
+2. **Turn each clause into a rule** in general words that name nothing secret: "no figures about client accounts", "the exit agreement and its terms stay confidential", "no statements about the company's management". A clause that only names salary, notice period or other terms that touch no work description adds no rule.
 3. **Read a vague clause strictly.** When a clause could cover more or less ("all information related to the business"), take the stricter reading as the rule, and tell the person that HR or a lawyer can say whether it is meant that broadly.
 4. **Show the rules to the person** in plain words and ask them to confirm each one. Write the confirmed rules under "Extra confidentiality rules" in the document. When a rule would itself name a secret, write the rule in general words and put the name it hides in `local-only/confidential-terms.txt`, one name per line.
 5. **Apply them with the lists in `SKILL.md`.** Where a rule is stricter than the default clean and leave-out lists, the rule wins.

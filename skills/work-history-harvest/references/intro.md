@@ -17,7 +17,7 @@ I collect your work at one employer into one document you keep: what you did, ho
 Client and colleague names, code, ticket numbers, internal systems, company figures. Only your own actions and results, in general words.
 
 **Your NDA**
-You can give me your NDA, the confidentiality part of your contract or your termination agreement. Termination agreements often add rules, such as keeping the agreement secret or not speaking badly of the company. Give only the clauses I need, without salary or personal data. Before you upload, check your company's AI policy on a work account, or whether your chats train models on a personal one.
+You can give me your NDA, the confidentiality part of your contract or your exit agreement. Exit agreements often add rules, such as keeping the agreement secret or not speaking badly of the company. Give only the clauses I need, without salary or personal data. Before you upload, check your company's AI policy on a work account, or whether your chats train models on a personal one.
 
 **You are responsible for the document**
 I make mistakes. Read all of it and check it against your contract and NDA before you copy it off a work computer. This is not legal advice.

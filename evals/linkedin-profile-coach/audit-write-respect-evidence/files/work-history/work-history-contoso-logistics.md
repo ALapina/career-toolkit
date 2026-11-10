@@ -18,7 +18,7 @@ This is a record of one person's work at one employer, collected from work syste
 - What the employer does, in public words: logistics software for retailers
 - Titles: Senior QA Engineer, 2021-03 to 2026-10
 - Employment period: 2021-03 to 2026-10
-- End of employment: role ended in a layoff
+- End of employment: left to take a career break
 - Language of the records: English
 - Reviewed by owner: yes, 2026-10-25
 - Next update: none, employment ended

@@ -41,7 +41,7 @@ Keep every draft clean:
 
 ## Give in return
 
-5. **Draft the person's recommendations for others.** Colleagues laid off at the same time need recommendations too, so an exchange suits both, and the person may send theirs first (`recommendations-5`). Each draft names two or three concrete things the person saw the colleague do, with results where the person knows them (`recommendations-3`). The colleague must be a 1st-degree connection (`recommendations-2`), and the person sends the text through LinkedIn's Recommend flow (`recommendations-5`). When the person endorses colleagues, they pick skills they saw those colleagues use (`skills-9`).
+5. **Draft the person's recommendations for others.** A recommendation helps the colleague too, so an exchange suits both, and the person may send theirs first (`recommendations-5`). Each draft names two or three concrete things the person saw the colleague do, with results where the person knows them (`recommendations-3`). The colleague must be a 1st-degree connection (`recommendations-2`), and the person sends the text through LinkedIn's Recommend flow (`recommendations-5`). When the person endorses colleagues, they pick skills they saw those colleagues use (`skills-9`).
 
    Done when each recommendation the person wants to give has a clean draft.
 

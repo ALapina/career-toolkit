@@ -43,7 +43,7 @@ This is a record of one person's work at one employer, collected from work syste
 - What the employer does, in public words: logistics software for retailers
 - Titles: Senior QA Engineer, 2023-04 to 2026-10; QA Engineer, 2021-03 to 2023-03
 - Employment period: 2021-03 to 2026-10
-- End of employment: role ended in a layoff
+- End of employment: left for a new role
 - Language of the records: English
 - Reviewed by owner: no
 - Next update: 2027-11-02
@@ -52,7 +52,7 @@ This is a record of one person's work at one employer, collected from work syste
 
 - **Titles**: each official title with its period, newest first. When the person confirms a standard title of the same function and level for a position, write it first and the official one in brackets: "Backend Engineer (official title: Engineer II)".
 - **Employment period**: `YYYY-MM to YYYY-MM`, or `YYYY-MM to now`.
-- **End of employment**: the plain fact, in the person's words, only when they want it recorded, such as "role ended in a layoff". How broad a layoff was stays out unless the employer made it public. Empty while the job goes on.
+- **End of employment**: the plain fact, in the person's words, only when they want it recorded, such as "left for a new role". Details of how the job ended that concern other people or the employer stay out unless the employer made them public. Empty while the job goes on.
 - **Reviewed by owner**: `no`, or `yes, YYYY-MM-DD`. It turns to yes only when the person says they have read the whole document; approving single records does not count. A new record, or a change to an approved record, turns it back to `no`.
 - **Next update**: one year after the latest run, while the person still works there; `none, employment ended` after the last harvest of an ended job.
 - **Last record ID**: the last ID used, so that no ID is used twice.
@@ -83,7 +83,7 @@ One row per run, oldest first. Run is `first harvest`, `harvest` (a later harves
 
 ### Extra confidentiality rules
 
-The person's own rules on top of the defaults, from their contract, NDA or termination agreement, in general words that name nothing secret, such as "no figures from the operations dashboard" or "the termination agreement itself stays confidential". "none" when the person has none.
+The person's own rules on top of the defaults, from their contract, NDA or exit agreement, in general words that name nothing secret, such as "no figures from the operations dashboard" or "the exit agreement itself stays confidential". "none" when the person has none.
 
 ## Record
 

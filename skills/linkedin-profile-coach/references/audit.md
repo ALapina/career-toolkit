@@ -43,7 +43,7 @@ Compare the person's current profile with the sourced rules in [best practices](
    | About, starting with the part shown before "see more" | `about-` | |
    | Featured | `featured-` | |
    | Each position, one line per position: title, company Page, dates, description, linked skills | `experience-`, `skills-3` | the current resume, if the person wants it compared |
-   | Gaps and the end of the last role, and any mention of the layoff | `career-break-` | |
+   | Gaps and the end of the last role, and any mention of how it ended | `career-break-` | |
    | Education, with graduation years as information | `sections-3`, `sections-8` | |
    | Licenses, certifications and courses | `sections-4` | |
    | Projects | `sections-6` | |

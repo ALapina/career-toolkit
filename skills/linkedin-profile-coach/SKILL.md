@@ -1,6 +1,6 @@
 ---
 name: linkedin-profile-coach
-description: Rebuilds a LinkedIn profile from evidence of real work, for a job search or after a layoff. Use to review or rewrite it, or to request recommendations.
+description: Rebuilds a LinkedIn profile from evidence of real work, for a job search. Use to review or rewrite it, or to request recommendations.
 license: MIT
 ---
 
@@ -92,7 +92,7 @@ Clean text may contain:
 - public technologies, languages, tools and methods (React, Kubernetes, Scrum);
 - the person's own actions and decisions, and their results, as relative figures where possible ("cut build time by 40%", "moved 20+ screens to the new stack");
 - team size and project duration;
-- the plain fact that the person's role ended in a layoff or restructuring.
+- the plain fact of how the person's own role ended, in their words.
 
 Clean text leaves out:
 
@@ -101,7 +101,7 @@ Clean text leaves out:
 - ticket and merge-request numbers, internal links and host names;
 - the employer's business figures: revenue, transaction volumes, client counts, prices;
 - security details beyond a category ("fixed vulnerable dependencies");
-- unannounced products and plans, internal reorganizations and other people's layoffs.
+- unannounced products and plans, internal reorganizations and changes to other people's jobs.
 
 The extra confidentiality rules in each work history document's About section hold here too, and the person may add terms and rules during setup. Items on the leave-out list are never borderline: generalize or remove them yourself. Show every other borderline sentence to the person with three choices: keep, generalize, remove. Without an answer, generalize. The [confidentiality procedure](references/confidentiality.md) holds the NDA pass, the scanner and the rules for `local-only/`; run its NDA pass before any phase hands its results to the person.
 
